@@ -1,8 +1,17 @@
 # Repository of useful commands
 
-Just some commands, basic to a bit more specilised. Mainly for myself and archival purposes.
+Just some commands, basic to a bit more specialised. Mainly for myself and archival purposes.
 
 These have been collected through years through several helpful resources and some of my own trial and error. Thank you to all the smart folks on the StackOverflow and the like, I am forever grateful.
+
+## Resources to learn from, lists of tools
+* Awesome Bioinformatics - A compilation of Bioinformatic Resources by Daniel E Cook: https://github.com/danielecook/Awesome-Bioinformatics
+* Rosalind Project - Learning Bioinformatics Through Problem Solving: https://rosalind.info/problems/list-view/
+* Learning Bioinformatics for free at Open Source Society University (OSSU): https://github.com/ossu/bioinformatics
+* EMBL-EBI on-demand training: https://www.ebi.ac.uk/training/on-demand
+* EliXir e-learning materials: https://tess.elixir-europe.org/elearning_materials
+* bio.tools by EliXir: https://bio.tools/
+* Biotools - A compilation of Bioinformatic Resources by John Didion: https://github.com/jdidion/biotools
 
 ## Lists
 
