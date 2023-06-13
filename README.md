@@ -4,6 +4,52 @@ Just some commands, basic to a bit more specialised. Mainly for myself and archi
 
 These have been collected through years through several helpful resources and some of my own trial and error. Thank you to all the smart folks on the StackOverflow and the like, I am forever grateful.
 
+## Content
+- [Repository of useful commands](#repository-of-useful-commands)
+  * [Resources to learn from, lists of tools](#resources-to-learn-from-lists-of-tools)
+  * [Lists](#lists)
+    + [Text file names (with extentions) list of all files](#text-file-names-with-extentions-list-of-all-files)
+    + [Text file paths list of all files](#text-file-paths-list-of-all-files)
+    + [text file: first name of file, then path of the file - text file list file name and path](#text-file-first-name-of-file-then-path-of-the-file-text-file-list-file-name-and-path)
+    + [To obtain filenames and first lines for all files in the directory](#to-obtain-filenames-and-first-lines-for-all-files-in-the-directory)
+    + [Comparing two unsorted lists, listing the unique in the second file](#comparing-two-unsorted-lists-listing-the-unique-in-the-second-file)
+    + [Extract second column and turn to comma separated list](#extract-second-column-and-turn-to-comma-separated-list)
+  * [Subsetting](#subsetting)
+    + [Take out only one column](#take-out-only-one-column)
+    + [Within the MAGS output folder](#within-the-mags-output-folder)
+    + [Copy selected files between folders](#copy-selected-files-between-folders)
+  * [Count](#count)
+    + [to count how many > (sequences) are there, wc -l counts the lines](#to-count-how-many-sequences-are-there-wc-l-counts-the-lines)
+  * [Sequence length of FASTA file](#sequence-length-of-fasta-file)
+  * [grep](#grep)
+    + [Print each line of a file which contains a match for pattern and keep the headers](#print-each-line-of-a-file-which-contains-a-match-for-pattern-and-keep-the-headers)
+    + [Get the header lines of fasta sequence file](#get-the-header-lines-of-fasta-sequence-file)
+  * [awk](#awk)
+    + [How to merge two files based on column of one file:](#how-to-merge-two-files-based-on-column-of-one-file)
+  * [Renaming file fasta header](#renaming-file-fasta-header)
+    + [Rename headers/sequence IDs in multi-FASTA file](#rename-headerssequence-ids-in-multi-fasta-file)
+  * [Single Line to Extract a Sequence from FASTA](#single-line-to-extract-a-sequence-from-fasta)
+    + [Extracting more than one Sequence](#extracting-more-than-one-sequence)
+  * [Split one fasta file into several files](#split-one-fasta-file-into-several-files)
+  * [sed - replacing text in a file](#sed-replacing-text-in-a-file)
+    + [Add filename to fasta headers in a loop: Introduce filename (genome name) in the fasta header in front of other things in the header](#add-filename-to-fasta-headers-in-a-loop-introduce-filename-genome-name-in-the-fasta-header-in-front-of-other-things-in-the-header)
+    + [Shorten the fasta header names](#shorten-the-fasta-header-names)
+    + [Remove header](#remove-header)
+  * [To change tab file to fasta, fasta to tab](#to-change-tab-file-to-fasta-fasta-to-tab)
+    + [tab2fasta](#tab2fasta)
+    + [fasta2tab](#fasta2tab)
+  * [Convert svg to png](#convert-svg-to-png)
+  * [How to check if the files in two folders are identical](#how-to-check-if-the-files-in-two-folders-are-identical)
+  * [Scripts from Windows to Linux: dos2unix](#scripts-from-windows-to-linux-dos2unix)
+- [NCBI MAGs Upload](#ncbi-mags-upload)
+  * [Formatting](#formatting)
+  * [BioProject](#bioproject)
+  * [Metagenomes](#metagenomes)
+  * [MAGs](#mags)
+    + [BioSample batch (MIMAG table)](#biosample-batch-mimag-table)
+    + [Genome](#genome)
+  * [SRA](#sra)
+
 ## Resources to learn from, lists of tools
 * Awesome Bioinformatics - A compilation of Bioinformatic Resources by Daniel E Cook: https://github.com/danielecook/Awesome-Bioinformatics
 * Rosalind Project - Learning Bioinformatics Through Problem Solving: https://rosalind.info/problems/list-view/
@@ -219,3 +265,62 @@ You need to convert your script so linux can read it, with dos2unix:
 ```
 dos2unix ncbi_copy.sh
 ```
+
+# NCBI MAGs Upload
+
+Submitting MAGs to NCBI.
+
+## Formatting
+Ommit any non-ASCII characters (also "" and ~ and °).
+
+## BioProject
+"A BioProject is a collection of biological data related to a single initiative, originating from a single organization or from a consortium of coordinating organizations."
+- Manually submit a BioProject
+- You get a BioProject accession, like for example "PRJNA949439" 
+
+## Metagenomes
+- Submit BioSample: Download the template: Packages for metagenome submitters: https://submit.ncbi.nlm.nih.gov/biosample/template/ -> Metagenome or environmental, 1.0
+- Or manually open up a "Submit BioSample" for each metagenome
+- You will get a metagenome (sample) BioSample SAM accession
+
+## MAGs
+### BioSample batch (MIMAG table)
+- Submit BioSample: Batch submission (maximum 1000 per submission): Download the template: Packages for metagenome submitters > GSC MIxS packages for genomes, metagenomes, and marker sequences > MIMAG Metagenome-assembled Genome > No environmental package
+- Fill in info in the MIMAG table
+- You can add the gtdb_taxonomy
+- You need to get the appropriate NCBI taxonomy, GTDB taxonomy to NCBI taxonomy might help: https://github.com/nick-youngblut/gtdb_to_taxdump
+- Insert the metagenome SAM accession under "derived-from" column into the MIMAG table
+- Upload the MIMAG table (batch submission)
+- You will get a BioSample MAG SAM accession
+
+Warning messages
+- "Warning: Provided taxonomy information was revised according to NCBI Taxonomy database rules. Please contact biosamplehelp@ncbi.nlm.nih.gov if you have any questions. "
+- "Warning: Submission processing may be delayed due to necessary curator review. Please check spelling of organism, current information could not be resolved automatically and will require a taxonomy consult. For more information about providing a valid organism, including new species, metagenomes (microbiomes) and metagenome-assembled genomes, see https://www.ncbi.nlm.nih.gov/biosample/docs/organism/."
+
+### Genome
+- Info https://www.ncbi.nlm.nih.gov/genbank/genomesubmit/
+- Batch submission: Submit Genome > Batch/multiple genomes (maximum 400 per submission / max 300 files when uploading via web browser) > Upload the Genome Info table (GenomeBatch) - https://submit.ncbi.nlm.nih.gov/templates/
+- Insert the BioSample MAG SAM accession under "biosample_accession"
+- You can check your fasta files for contamination using NCBI Foreign Contamination Screen (FCS): https://github.com/ncbi/fcs
+
+Answer questions on Gaps:
+- Appropriate minimum number of Ns in a row (0-10) that represents a gap
+- What type of evidence was used to assert linkage across the assembly gaps? Paired-ends.
+
+Answer questions on Genome Info:
+- Which type of genome? One or more chromosomes are in multiple pieces and/or some sequences are not assembled into chromosomes.
+- Are these submissions exprected to represent the full genomes? Yes.
+- Annotate this prokaryotic genome in the NCBI Prokaryotic Annotaton pipeline (PGAP) before its release? Yes. (Running PGAP yourself: https://github.com/ncbi/pgap (webinar: https://www.youtube.com/watch?v=pNn_-_46lpI))
+
+Upload the fasta files: How do you want to provide files for this submission?
+- FTP or Aspera Command Line file preload: All files for a submission must be uploaded into a single folder.
+- Web browser upload via HTTP or Aspera Connect plugin: Do not use web browser HTTP upload if you are uploading files over 10 GB or more than 300 files. 
+
+
+- Genome Submission: "Not for complete viral or organellar genomes. Submit those as regular GenBank records by emailing them to GenBank Submissions or using BankIt."
+
+## SRA
+"The SRA is a raw data archive, and requires per-base quality scores for all submitted data. SRA accepts binary files such as BAM, SFF, and HDF5 formats and text formats such as FASTQ."
+
+- Submit Sequence Read Archive (SRA)
+- Appropriate formats: https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/
