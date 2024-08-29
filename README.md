@@ -57,7 +57,7 @@ Command line / Linux courses for students
 * Video Command Line Crash Course For Beginners: https://www.youtube.com/watch?v=uwAqEzhyjtw
 * A nice and simple written tutorial with example files: https://ndombrowski.github.io/Unix_tutorial/
 * https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
-* * Intro command line (4h): https://www.codecademy.com/learn/learn-the-command-line
+* Intro command line (4h): https://www.codecademy.com/learn/learn-the-command-line
 
 Other
 * Awesome Bioinformatics - A compilation of Bioinformatic Resources by Daniel E Cook: https://github.com/danielecook/Awesome-Bioinformatics
