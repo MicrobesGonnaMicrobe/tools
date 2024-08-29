@@ -51,6 +51,15 @@ These have been collected through years through several helpful resources and so
   * [SRA](#sra)
 
 ## Resources to learn from, lists of tools
+
+Command line / Linux courses for students
+* Nice explanation of terminal (read until Connecting commands together with pipes): https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line
+* Video Command Line Crash Course For Beginners: https://www.youtube.com/watch?v=uwAqEzhyjtw
+* A nice and simple written tutorial with example files: https://ndombrowski.github.io/Unix_tutorial/
+* https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
+* * Intro command line (4h): https://www.codecademy.com/learn/learn-the-command-line
+
+Other
 * Awesome Bioinformatics - A compilation of Bioinformatic Resources by Daniel E Cook: https://github.com/danielecook/Awesome-Bioinformatics
 * Rosalind Project - Learning Bioinformatics Through Problem Solving: https://rosalind.info/problems/list-view/
 * Learning Bioinformatics for free at Open Source Society University (OSSU): https://github.com/ossu/bioinformatics
@@ -58,6 +67,7 @@ These have been collected through years through several helpful resources and so
 * EliXir e-learning materials: https://tess.elixir-europe.org/elearning_materials
 * bio.tools by EliXir: https://bio.tools/
 * Biotools - A compilation of Bioinformatic Resources by John Didion: https://github.com/jdidion/biotools
+* LinuxFoundationX: Introduction to Linux: https://www.edx.org/learn/linux/the-linux-foundation-introduction-to-linux
 
 ## Lists
 
