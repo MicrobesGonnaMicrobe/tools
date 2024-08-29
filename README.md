@@ -69,6 +69,10 @@ Other
 * Biotools - A compilation of Bioinformatic Resources by John Didion: https://github.com/jdidion/biotools
 * LinuxFoundationX: Introduction to Linux: https://www.edx.org/learn/linux/the-linux-foundation-introduction-to-linux
 
+Installing Windows Subsystem for Linux (WSL)
+1. Install the Windows subsystem for Linux: https://apps.microsoft.com/detail/9nz3klhxdjp5?hl=en-us&gl=US
+2. For easier management, I recommend also installing Windows Terminal: https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-us&gl=US
+
 ## Lists
 
 ### Text file names (with extentions) list of all files
