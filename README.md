@@ -169,6 +169,8 @@ grep ">" FILENAME > HEADERFILE.txt
 
 ## awk
 
+Good explanation of awk: https://youtu.be/jJ02kEETw70?si=Agbfb4i90nF5KvX9
+
 ### How to merge two files based on column of one file:
 ```
 awk -F'[\t|]' 'FNR==NR{a[$1]=$0;next}{$17=a[$3];print}' OFS='\t' BacMet2_PRE.155512.mapping.txt BS4_allcontigs_notbinned_prokka_BacMet_Pred.tsv > BS4_allcontigs_notbinned_prokka_BacMet_Pred_awk.tsv
